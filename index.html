@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <title>WakeMeUp - Web based alarm clock</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="description" content="WakeMeUp is a web based alarm clock used for setting alarm on pc">
+    <script id="firebase"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+
+    <div id="overlay" class="overlay"></div>
+
+    <button id="create-alarm-btn" class="create-alarm-btn">Create alarm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</button>
+
+    <button id="alarm-settings-btn" class="alarm-settings-btn">Alarm settings</button>
+
+    <h1 id="greeting" class="greeting"></h1>
+
+    <div id="quote-container" class="quote-container">
+        <q id="quote" class="quote"></q>
+        <p id="quote-author" class="quote-author"></p>
+    </div>
+
+
+    <h1 id="currentTime" class="currentTime"></h1>
+
+    <div class="download-container">
+
+        <a href="wakemeup-win32-x64.rar" class="download-btn" download>Download for Windows</a>
+
+        <p class="download-hint">Click the button to download the app for windows. After downloading, extract the zip file. You will find the wakemeup executable file, open it to start the app.</p>
+
+    </div>
+
+
+
+    <p id="author" class="author">Developed with <span>&hearts;</span> By <a href="http://ckm100.github.io" target="_blank">Mawuli Kufogbe</a></p>
+
+    <div id="set-alarm" class="set-alarm">
+
+        <div id="alarm-name-box" class="alarm-name-box">
+
+            <p id="alarm-name-hint" class="alarm-name-hint">Enter the name of the alarm</p>
+
+            <input type="text" placeholder="Alarm Name" id="alarm-name" class="alarm-name">
+
+        </div>
+
+        <div id="set-alarm-hour-contain" class="set-alarm-hour-contain">
+
+            <button id="hour-carat-up" class="hour-carat-up">&#9650;</button>
+
+            <p id="set-alarm-hour" class="set-alarm-hour">12</p>
+
+            <button id="hour-carat-down" class="hour-carat-down">&#9660;</button>
+
+        </div>
+
+        <span class="set-alarm-colon">:</span>
+
+        <div id="set-alarm-minute-contain" class="set-alarm-minute-contain">
+
+            <button id="minute-carat-up" class="minute-carat-up">&#9650;</button>
+
+            <p id="set-alarm-minute" class="set-alarm-minute">00</p>
+
+            <button id="minute-carat-down" class="minute-carat-down">&#9660;</button>
+
+        </div>
+
+        <span class="set-alarm-colon">:</span>
+
+        <div id="set-alarm-zone-contain" class="set-alarm-zone-contain">
+
+            <button id="zone-carat-up" class="zone-carat-up">&#9650;</button>
+
+            <p id="set-alarm-zone" class="set-alarm-zone">PM</p>
+
+            <button id="zone-carat-down" class="zone-carat-down">&#9660;</button>
+
+        </div>
+
+        <div id="set-alarm-btns" class="set-alarm-btns">
+
+            <button id="set-alarm-cancel-btn" class="set-alarm-cancel-btn">Cancel</button>
+
+            <button id="set-alarm-save-btn" class="set-alarm-save-btn">Save</button>
+
+        </div>
+
+    </div>
+
+    <div id="notification" class="notification">
+        <p id="alarm-info" class="alarm-info"></p>
+    </div>
+
+    <div id="collapse-alarm" class="collapse-alarm">
+        <button id="edit-alarm-btn" class="edit-alarm-btn"><span class="editSign">&nbsp;+</span>&nbsp;&nbsp;Edit Alarm</button>
+        <div id="alarm-container" class="alarm-container">
+            <span id="alarm-hour" class="alarm-hour"></span>
+            <span id="alarm-colon" class="alarm-colon">:</span>
+            <span id="alarm-minute" class="alarm-minute"></span>
+            <span id="alarm-zone" class="alarm-zone"></span>
+            <span title="Edit" id="edit-alarm-icon" class="edit-alarm-icon">&#9998;</span>
+            <span title="Delete" id="delete-alarm-icon" class="delete-alarm-icon">&#10006;</span>
+        </div>
+    </div>
+
+    <div id="delete-alarm-popup" class="delete-alarm-popup">
+
+        <p>Are you sure you want to delete the alarm?</p>
+
+        <button id="delete-alarm-accept" class="delete-alarm-accept">Yes</button>
+
+        <button id="delete-alarm-decline" class="delete-alarm-decline">No</button>
+
+    </div>
+
+    <div id="alarm-ringing-popup" class="alarm-ringing-popup">
+
+        <img src="assets/alarm-bell.gif" alt="alarm-bell" id="alarm-bell" class="alarm-bell">
+
+        <h1 id="alarm-ringing-time" class="alarm-ringing-time"></h1>
+
+        <h1 id="alarm-name-text" class="alarm-name-text"></h1>
+
+        <button id="snooze-alarm-btn" class="snooze-alarm-btn">Snooze Alarm</button>
+
+        <button id="stop-alarm-btn" class="stop-alarm-btn">Stop Alarm</button>
+
+    </div>
+
+    <div id="alarm-settings-popup" class="alarm-settings-popup">
+
+        <h1>Alarm Settings</h1>
+
+        <div id="alarm-settings-row1" class="alarm-settings-row1">
+            <label for="alarm-tone">Alarm tone</label>
+
+            <select id="alarm-tone" class="alarm-tone">
+                <option value="assets/audio/default_tone.mp3" selected>Default tone</option>
+                <option value="assets/audio/tone_one.mp3">Tone one</option>
+                <option value="assets/audio/tone_two.mp3">Tone two</option>
+                <option value="assets/audio/tone_three.mp3">Tone three</option>
+                <option value="assets/audio/tone_four.mp3">Tone four</option>
+                <option value="assets/audio/tone_five.mp3">Tone five</option>
+            </select>
+        </div>
+
+        <div id="alarm-settings-row" class="alarm-settings-row">
+
+            <label for="alarm-tone-volume-ctrl">Alarm volume</label>
+
+            <input type="range" value="0.5" min="0" step="0.1" max="1" id="alarm-tone-volume-ctrl" class="alarm-tone-volume-ctrl"><span id="alarm-volume" class="alarm-volume">50%</span>
+
+        </div>
+
+        <div id="alarm-settings-row" class="alarm-settings-row">
+
+            <label for="snooze-alarm">Snooze Alarm</label>
+
+            <select id="snooze-alarm" class="snooze-alarm">
+                <option value="3">3 minutes</option>
+                <option value="5" selected>5 minutes</option>
+                <option value="10">10 minutes</option>
+                <option value="15">15 minutes</option>
+                <option value="30">30 minutes</option>
+            </select>
+
+        </div>
+
+        <div id="set-alarm-settings" class="set-alarm-settings">
+
+            <button id="set-alarm-settings-cancel-btn" class="set-alarm-settings-cancel-btn">Cancel</button>
+
+            <button id="set-alarm-settings-save-btn" class="set-alarm-settings-save-btn">Save</button>
+
+        </div>
+
+    </div>
+
+    <audio src="assets/audio/default_tone.mp3" id="alarm-tone-play" class="alarm-tone-play"></audio>
+
+</body>
+
+</html>
