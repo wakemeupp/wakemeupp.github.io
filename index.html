@@ -7,12 +7,33 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="assets/favicon.ico">
     <meta name="description" content="WakeMeUp is a web based alarm clock used for setting alarm on pc">
+    <script>
+        document.onreadystatechange = function() {
+
+            if (document.readyState === "loading") {
+
+                document.querySelector(".document-loading-overlay").style.display = "block";
+
+            } else if (document.readyState === "complete") {
+
+                document.querySelector(".document-loading-overlay").style.display = "none";
+            }
+        }
+
+    </script>
     <script id="firebase"></script>
     <script src="js/main.js"></script>
 </head>
 
 <body>
 
+    <div class="document-loading-overlay">
+
+        <img src="assets/loader.gif" class="loader">
+
+        <h3 class="loader-text">Webapp is loading, It might take some minute to load on your first visit here. Please wait... </h3>
+
+    </div>
     <div id="overlay" class="overlay"></div>
 
     <button id="create-alarm-btn" class="create-alarm-btn">Create alarm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+</button>

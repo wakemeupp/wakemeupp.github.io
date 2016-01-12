@@ -194,6 +194,23 @@ body {
 .download-btn:hover + .download-hint {
     display: block;
 }
+.document-loading-overlay {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: :none;
+}
+.loader {
+    margin-top: 100px;
+}
+.loader-text {
+    color: #047ab3;
+    text-transform: capitalize;
+}
 .overlay {
     width: 100%;
     height: 100%;
