@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-#2015-12-18 v0.0.1
+#2016-01-12 v0.0.1
 
 index.html
 css/main.css
@@ -10,7 +10,7 @@ assets/favicon.ico
 assets/alarm-bell.gif
 assets/clock-bg.jpg
 assets/set-alarm-bg.jpg
-assets/alarm-ringing-bg.gif
+assets/alarm-ringing-bg.jpg
 assets/audio/default_tone.mp3
 assets/audio/tone_five.mp3
 assets/audio/tone_four.mp3
