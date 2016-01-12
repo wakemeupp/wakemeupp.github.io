@@ -95,6 +95,8 @@ function ready() {
         downloadContain = document.querySelector(".download-container"),
 
         downloadBtn = document.querySelector(".download-btn"),
+        
+        googleAnalytic = document.getElementById("googleAnalytics"),
 
         userDate = new Date(),
 
@@ -148,6 +150,8 @@ function ready() {
 
         firebaseRef.src = "js/firebase.js";
 
+        googleAnalytic.src = "js/google-analytics.js";
+        
         firebaseRef.onload = function () {
 
             firebaseDb = new Firebase("https://crackling-inferno-105.firebaseio.com/");
