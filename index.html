@@ -14,7 +14,7 @@
 
                 document.querySelector(".document-loading-overlay").style.display = "block";
 
-            } else if (document.readyState === "complete") {
+            } else if (document.readyState === "interactive") {
 
                 document.querySelector(".document-loading-overlay").style.display = "none";
             }
