@@ -8,19 +8,17 @@
     <link rel="shortcut icon" href="assets/favicon.ico">
     <meta name="description" content="WakeMeUp is a web based alarm clock used for setting alarm on pc">
     <script>
-        document.onreadystatechange = function() {
+     /*   document.onreadystatechange = function() {
 
             if (document.readyState === "loading") {
 
                 document.querySelector(".document-loading-overlay").style.display = "block";
 
-            } else if (document.readyState === "interactive") {
+            } else if (document.readyState === "complete") {
 
                 document.querySelector(".document-loading-overlay").style.display = "none";
             }
-
-            console.log(document.readyState);
-        }
+        }*/
 
     </script>
     <script id="firebase"></script>
@@ -33,7 +31,7 @@
 
         <img src="assets/loader.gif" class="loader">
 
-        <h3 class="loader-text">Webapp is loading, It might take some minute to load on your first visit here. Please wait... </h3>
+        <h3 class="loader-text">Webapp is loading, It might take some minutes to load if it is your first visit. Please wait... </h3>
 
     </div>
     <div id="overlay" class="overlay"></div>
