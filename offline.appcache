@@ -5,6 +5,8 @@ CACHE MANIFEST
 index.html
 css/main.css
 js/main.js
+js/firebase.js
+js/google-analytics.js
 assets/loader.gif
 assets/favicon.ico
 assets/alarm-bell.gif
